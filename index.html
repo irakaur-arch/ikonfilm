@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ira Kaur — urban and landscape photography." />
+  <meta name="theme-color" content="#050505" />
+  <title>Ira Kaur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">Ira Kaur</div>
+      <nav class="nav">
+        <a href="#featured">Featured Works</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">ikonfilm</p>
+          <h1>Ira Kaur</h1>
+          <p class="lede">
+            Urban scenes, open landscapes, and quiet visual notes — presented with a simple editorial layout.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#featured">Explore featured works</a>
+            <a class="button" href="#collections">View collections</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="images/IMG_5393.JPG" alt="Featured photograph" />
+        </div>
+      </section>
+
+      <section id="featured" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Selected</p>
+          <h2>Featured Works</h2>
+        </div>
+        <div class="featured-grid">
+          <button class="work-card" data-title="City Rain" data-location="Downtown" data-description="Street light, wet pavement, and a quiet corner of the city." data-src="images/IMG_5393.JPG">
+            <img src="images/IMG_5393.JPG" alt="City Rain" />
+            <span>
+              <strong>City Rain</strong>
+              <small>Downtown</small>
+            </span>
+          </button>
+          <button class="work-card tall" data-title="Blue Hour Skyline" data-location="City Center" data-description="A city frame with lights, depth, and a darkened sky." data-src="images/IMG_5522.jpg">
+            <img src="images/IMG_5522.jpg" alt="Blue Hour Skyline" />
+            <span>
+              <strong>Blue Hour Skyline</strong>
+              <small>City Center</small>
+            </span>
+          </button>
+          <button class="work-card" data-title="Open Horizon" data-location="Outside the city" data-description="Wide space, clean lines, and a calm horizon." data-src="images/IMG_5573.JPG">
+            <img src="images/IMG_5573.JPG" alt="Open Horizon" />
+            <span>
+              <strong>Open Horizon</strong>
+              <small>Landscape</small>
+            </span>
+          </button>
+          <button class="work-card wide" data-title="Glass and Steel" data-location="Financial District" data-description="Clean geometry and reflections from a modern street scene." data-src="images/IMG_5583_Original.jpg">
+            <img src="images/IMG_5583_Original.jpg" alt="Glass and Steel" />
+            <span>
+              <strong>Glass and Steel</strong>
+              <small>Architecture</small>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section id="collections" class="section">
+        <div class="section-head split">
+          <div>
+            <p class="eyebrow">Organized series</p>
+            <h2>Collections</h2>
+          </div>
+          <p class="section-note">Create a collection with a title, a short note, a cover image, and a few photos. It saves in your browser on this device.</p>
+        </div>
+
+        <div class="editor-grid">
+          <form id="collectionForm" class="editor-card">
+            <h3>Add a collection</h3>
+            <label>
+              Collection title
+              <input id="collectionTitle" type="text" placeholder="City Nights" required />
+            </label>
+            <label>
+              Short note
+              <textarea id="collectionNote" rows="4" placeholder="A quiet study of rain, windows, and reflections." required></textarea>
+            </label>
+            <label>
+              Cover image
+              <input id="collectionCover" type="file" accept="image/*" required />
+            </label>
+            <label>
+              Collection photos
+              <input id="collectionPhotos" type="file" accept="image/*" multiple required />
+            </label>
+            <button class="button primary wide-btn" type="submit">Save collection</button>
+            <p class="form-help">Tip: keep it to a few strong images so the page stays fast and elegant.</p>
+          </form>
+
+          <div class="collections-list" id="collectionsList"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="section-head split">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>About Ira</h2>
+          </div>
+          <p class="section-note">Short and direct works best here.</p>
+        </div>
+        <div class="about-card">
+          <p>
+            I photograph urban scenes and landscapes with a focus on atmosphere, structure, and quiet moments.
+            This site keeps the attention on the work while staying easy to update as new projects come in.
+          </p>
+          <div class="contact-row">
+            <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <img id="modalImage" alt="Selected photograph" />
+      <div class="modal-copy">
+        <p class="eyebrow" id="modalCategory">Featured work</p>
+        <h3 id="modalTitle">Title</h3>
+        <p class="modal-location" id="modalLocation"></p>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <template id="collectionTemplate">
+    <article class="collection-card">
+      <img class="collection-cover" alt="Collection cover" />
+      <div class="collection-body">
+        <h3></h3>
+        <p></p>
+        <div class="collection-thumbs"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
